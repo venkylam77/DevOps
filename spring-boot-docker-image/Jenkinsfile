@@ -1,0 +1,49 @@
+pipeline {
+    agent any // Specifies that the pipeline can run on any available agent
+
+  
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the source code from your SCM (e.g., Git)
+                git branch: 'main', url: 'https://github.com/venkylam77/DevOps.git' // Replace with your repository URL and branch
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Clean and compile the Spring Boot application using Maven
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run unit and integration tests
+                sh 'mvn test'
+                // Archive test results for Jenkins to display
+                junit '**/target/surefire-reports/TEST-*.xml'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                // Package the application into a JAR or WAR file
+                sh 'mvn package -DskipTests' // -DskipTests to avoid re-running tests if already done in 'Test' stage
+                // Archive the generated artifact
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true // Adjust for .war if applicable
+            }
+        }
+
+       
+    }
+
+    post {
+        success {
+            echo 'Pipeline finished successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs for details.'
+        }
+    }
+}
