@@ -41,7 +41,14 @@ pipeline {
         }
     stage('Docker Build') {
       steps {
-        sh 'docker build -t venkylam77/spring-boot-docker-image:latest .'
+          echo 'Building Docker Image for spring-boot-docker-image start..'
+                dir('spring-boot-docker-image') {
+                   echo 'running docker build -t spring-boot-docker-image:latest . command..'
+                   sh 'docker build -t spring-boot-docker-image:latest .'
+                    
+                }
+               echo 'Building Docker Image for spring-boot-docker-image end..'
+          
       }
     }
     }
