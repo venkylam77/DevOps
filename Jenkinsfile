@@ -39,5 +39,10 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    stage('Docker Build') {
+      steps {
+        sh 'docker build -t venkylam77/spring-boot-docker-image:latest .'
+      }
+    }
     }
 }
