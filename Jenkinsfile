@@ -12,14 +12,16 @@ pipeline {
                 echo 'Building23..'
                 echo 'sh pwd1..'
                 sh "pwd"
-                dir('spring-boot-docker-image') {
+                dir('spring-boot-docker-image/src') {
                     echo 'sh pwd2..'
                    sh "pwd"
+                   sh 'mvn clean compile'
+                    
                 }
                 echo 'sh pwd3..'
                sh "pwd"
                 
-                sh 'mvn clean compile'
+            
             }
         }
         stage('Test') {
