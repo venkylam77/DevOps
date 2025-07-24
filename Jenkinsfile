@@ -40,6 +40,7 @@ pipeline {
             }
         }
     stage('Docker Build') {
+    agent docker
       steps {
           echo 'Building Docker Image for spring-boot-docker-image start..'
                 dir('spring-boot-docker-image') {
@@ -51,5 +52,5 @@ pipeline {
           
       }
     }
-    }
+}
 }
