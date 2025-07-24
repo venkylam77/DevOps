@@ -12,7 +12,7 @@ pipeline {
                 echo 'Building23..'
                 echo 'sh pwd1..'
                 sh "pwd"
-                dir('spring-boot-docker-image/src') {
+                dir('spring-boot-docker-image') {
                     echo 'sh pwd2..'
                    sh "pwd"
                    sh 'mvn clean compile'
