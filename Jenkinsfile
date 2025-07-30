@@ -45,7 +45,7 @@ pipeline {
       steps {
           echo 'Building Docker Image for spring-boot-docker-image start...'
                 dir('spring-boot-docker-image') {
-                   echo 'running docker build -t spring-boot-docker-image:latest . command.tesst---------...'
+                   echo 'running docker build -t spring-boot-docker-image:latest . command.tesst---------=======================...'
                    //script {
                      //sh "docker build -t spring-boot-docker-image:latest ."
                    //} 
