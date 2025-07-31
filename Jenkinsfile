@@ -4,6 +4,7 @@ pipeline {
         
         maven 'Maven_3.9.11' 
         jdk 'JDK 17'
+        //docker 'docker'
     }
 
     stages {
@@ -39,5 +40,19 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    stage('Docker Build') {
+    //agent docker
+      steps {
+          echo 'Building Docker Image for spring-boot-docker-image start...'
+                dir('spring-boot-docker-image') {
+                   echo 'running docker build -t spring-boot-docker-image:latest .webhook test.122..'
+                   //script {
+                     //sh "docker build -t spring-boot-docker-image:latest ."
+                   //} 
+                }
+               echo 'Building Docker Image for spring-boot-docker-image end..'
+          
+      }
     }
+}
 }
