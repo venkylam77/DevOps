@@ -47,6 +47,8 @@ pipeline {
           echo 'running docker build -t spring-boot-docker-image:latest .webhook....'
           script {
               echo 'test===='
+              def myImage = docker.build("my-app:latest") 
+              
               
                 //withDockerRegistry(credentialsId: 'dockerhub', toolName: 'mydocker') {
                         // sh 'docker build -t venkylam77/spring-boot-docker-image:latest .'
