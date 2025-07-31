@@ -51,11 +51,8 @@ pipeline {
                          sh "docker build -t spring-boot-docker-image:latest ."
                          sh "docker push"  
                         }
-                       
-                    // sh "docker build -t spring-boot-docker-image:latest ."
-                    //dockerImage = docker.build("spring-boot-docker-image:latest", ".")
                    } 
-               // }
+               //}
                echo 'Building Docker Image for spring-boot-docker-image end..'
           
       }
