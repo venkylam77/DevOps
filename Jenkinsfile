@@ -49,7 +49,7 @@ pipeline {
               echo 'test===='
               sh 'echo $PATH'
               //sh 'which docker'
-              withDockerContainer('venkylam77/spring-boot-docker-image:latest') {
+              withDockerContainer('') {
                    // some block
                     echo 'test==---------=='
                   
