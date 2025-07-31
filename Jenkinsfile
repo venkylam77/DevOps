@@ -50,7 +50,7 @@ pipeline {
               echo 'test======111'
               sh 'echo $PATH'
               sh 'which docker'
-              dockerImage = docker.build "springbootdockerimage:1.0 ."
+              dockerImage = docker.build "springbootdockerimage:1.0"
               
             }
       }
