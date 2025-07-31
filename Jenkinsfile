@@ -48,10 +48,13 @@ pipeline {
           script {
               echo 'test===='
               sh 'echo $PATH'
-              sh 'which docker'
-              
-              
-                //withDockerRegistry(credentialsId: 'dockerhub', toolName: 'mydocker') {
+              //sh 'which docker'
+              withDockerContainer('venkylam77/spring-boot-docker-image:latest') {
+                   // some block
+                    echo 'test==---------=='
+                  
+                  }
+               //withDockerRegistry(credentialsId: 'dockerhub', toolName: 'mydocker') {
                         // sh 'docker build -t venkylam77/spring-boot-docker-image:latest .'
                          //sh 'docker push'
                     // }
