@@ -49,7 +49,7 @@ pipeline {
           script {
               echo 'test==---=='
               sh 'echo $PATH'
-              //sh 'which docker'
+              sh 'which docker'
               withDockerContainer('') {
                    // some block
                     echo 'test==---------=='
