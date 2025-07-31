@@ -44,10 +44,10 @@ pipeline {
       //agent docker
       steps {
           echo 'Building Docker Image for spring-boot-docker-image start...'
-                dir('spring-boot-docker-image') {
+                //dir('spring-boot-docker-image') {
                    echo 'running docker build -t spring-boot-docker-image:latest .webhook..'
                    script {
-                       withDockerRegistry(credentialsId: 'bb5fccc3-34b6-421c-bcfc-ae5d3c7adfc0') {
+                       withDockerRegistry(credentialsId: 'dockerhub', toolName: 'mydocker') {
                          sh "docker build -t spring-boot-docker-image:latest ."
                          sh "docker push"  
                         }
@@ -55,7 +55,7 @@ pipeline {
                     // sh "docker build -t spring-boot-docker-image:latest ."
                     //dockerImage = docker.build("spring-boot-docker-image:latest", ".")
                    } 
-                }
+               // }
                echo 'Building Docker Image for spring-boot-docker-image end..'
           
       }
