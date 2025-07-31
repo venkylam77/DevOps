@@ -44,13 +44,13 @@ pipeline {
       //agent docker
       steps {
           echo 'Building Docker Image for spring-boot-docker-image start...'
-                dir('spring-boot-docker-image') {
+                //dir('spring-boot-docker-image') {
                    echo 'running docker build -t spring-boot-docker-image:latest .webhook..'
                    script {
                     // sh "docker build -t spring-boot-docker-image:latest ."
                     dockerImage = docker.build("spring-boot-docker-image:latest", ".")
                    } 
-                }
+                //}
                echo 'Building Docker Image for spring-boot-docker-image end..'
           
       }
