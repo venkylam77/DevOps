@@ -4,7 +4,7 @@ pipeline {
         
         maven 'Maven_3.9.11' 
         jdk 'JDK 17'
-        //docker 'docker'
+        docker 'docker'
     }
 
     stages {
@@ -41,7 +41,7 @@ pipeline {
             }
         }
     stage('Docker Build') {
-    //agent docker
+      agent docker
       steps {
           echo 'Building Docker Image for spring-boot-docker-image start...'
                 dir('spring-boot-docker-image') {
