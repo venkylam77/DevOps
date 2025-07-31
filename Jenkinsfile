@@ -46,6 +46,8 @@ pipeline {
           echo 'Building Docker Image for spring-boot-docker-image start...'
           echo 'running docker build -t spring-boot-docker-image:latest .webhook....'
           script {
+              echo 'test===='
+              
                 //withDockerRegistry(credentialsId: 'dockerhub', toolName: 'mydocker') {
                         // sh 'docker build -t venkylam77/spring-boot-docker-image:latest .'
                          //sh 'docker push'
