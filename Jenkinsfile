@@ -52,7 +52,7 @@ pipeline {
               sh 'which docker'
               dockerImage = docker.build "springbootdockerimage:1.0"
               //sh "sudo docker build -t spring-boot-docker-image:latest ."
-              docker.withRegistry('', 'dockerhub') {
+              docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                 dockerImage.push()
             }
               
