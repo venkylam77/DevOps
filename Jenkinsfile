@@ -47,7 +47,7 @@ pipeline {
           echo 'running docker build -t spring-boot-docker-image:latest .webhook....'
           dir('spring-boot-docker-image') {
           script {
-              echo 'test======111111'
+              echo 'test======111222'
               sh 'echo $PATH'
               sh 'which docker'
               dockerImage = docker.build "springbootdockerimage:1.0"
