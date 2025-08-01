@@ -47,7 +47,7 @@ pipeline {
           echo 'running docker build -t spring-boot-docker-image:latest .webhook....'
           dir('spring-boot-docker-image') {
           script {
-              echo 'test======111333555577888'
+              echo 'test======111333555'
               sh 'echo $PATH'
               sh 'which docker'
               sh 'java -version'
