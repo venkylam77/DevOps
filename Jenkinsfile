@@ -51,7 +51,7 @@ pipeline {
               sh 'echo $PATH'
               sh 'which docker'
               sh 'java -version'
-              dockerImage = docker.build "venkylam77/springbootdockerimage:2.0"
+              dockerImage = docker.build "venkylam77/spring-boot-docker-image:2.0"
               //sh "sudo docker build -t spring-boot-docker-image:latest ."
               docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                 dockerImage.push()
